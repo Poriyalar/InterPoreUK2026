@@ -226,6 +226,94 @@
     }
     .chapter-link:hover { background: var(--gold); color: var(--navy); }
 
+
+    /* ── CONTACT & ACCOMMODATION ── */
+    .contact-accomm-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+    @media (max-width: 768px) { .contact-accomm-grid { grid-template-columns: 1fr; } }
+    .contact-block, .accomm-block {
+      background: #fff;
+      border-radius: 4px;
+      padding: 2.2rem;
+      border-top: 3px solid var(--teal);
+    }
+    .contact-block h3, .accomm-block h3 {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 1.25rem;
+      color: var(--navy);
+      margin-bottom: 1rem;
+    }
+    .contact-block p, .accomm-block p {
+      font-size: 1rem;
+      color: var(--text-mid);
+      line-height: 1.8;
+      margin-bottom: 1rem;
+    }
+    .contact-email {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--teal);
+      text-decoration: none;
+      border-bottom: 1.5px solid rgba(26,107,124,0.3);
+      padding-bottom: 0.1rem;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .contact-email:hover { color: var(--navy); border-color: var(--navy); }
+    .accomm-block a.accomm-link {
+      display: inline-block;
+      margin-top: 0.5rem;
+      font-size: 0.86rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--navy);
+      text-decoration: none;
+      border: 1.5px solid var(--navy);
+      padding: 0.7rem 1.4rem;
+      border-radius: 2px;
+      transition: background 0.2s, color 0.2s;
+    }
+    .accomm-link:hover { background: var(--navy); color: #fff !important; }
+
+    /* ── CANCELLATION POLICY ── */
+    .cancellation-box {
+      margin-top: 2rem;
+      background: var(--offwhite);
+      border: 1px solid var(--warm-grey);
+      border-radius: 4px;
+      padding: 1.8rem 2rem;
+    }
+    .cancellation-title {
+      font-weight: 700;
+      font-size: 0.92rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--navy);
+      margin-bottom: 1.2rem;
+    }
+    .cancellation-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+    @media (max-width: 600px) { .cancellation-grid { grid-template-columns: 1fr; } }
+    .cancellation-item {
+      display: flex; gap: 0.9rem; align-items: flex-start;
+    }
+    .cancellation-icon {
+      width: 26px; height: 26px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.75rem; font-weight: 700; flex-shrink: 0; margin-top: 0.1rem;
+    }
+    .cancellation-item:first-child .cancellation-icon { background: rgba(26,107,124,0.12); color: var(--teal); }
+    .cancellation-item:last-child  .cancellation-icon { background: rgba(180,60,60,0.1);  color: #b43c3c; }
+    .cancellation-item strong { display: block; font-size: 0.95rem; color: var(--navy); margin-bottom: 0.2rem; }
+    .cancellation-item p { font-size: 0.92rem; color: var(--text-mid); }
     /* ── SCROLL REVEAL ── */
     .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
     .reveal.visible { opacity: 1; transform: translateY(0); }
@@ -244,6 +332,7 @@
       <li><a href="#registration">Register</a></li>
       <li><a href="#organisers">Organisers</a></li>
       <li><a href="#venue">Venue</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
 
@@ -321,7 +410,7 @@
           <div class="date-value">27th June 2026</div>
         </div>
         <div class="date-card">
-          <div class="date-label">Abstract Acceptance</div>
+          <div class="date-label">Abstract Acceptance Notification</div>
           <div class="date-value">18th July 2026</div>
         </div>
         <div class="date-card" style="border-right:none;">
@@ -385,11 +474,30 @@
           <div class="reg-price"><span class="reg-currency">£</span>85</div>
         </div>
       </div>
-      <p class="reg-includes reveal">The conference fee includes <strong>lunch on both days</strong>, a <strong>drinks reception during the poster session</strong>, and <strong>tea/coffee during breaks</strong>.</p>
+      <p class="reg-includes reveal">The conference fee includes <strong>lunch on both days</strong>, a <strong>drinks reception during the poster session</strong>, <strong>tea/coffee during breaks</strong>, and <strong>conference proceedings</strong>.</p>
       <p class="reg-deadline-note reveal">Registration deadline: <strong>8th August 2026</strong></p>
       <br/>
       <div style="text-align:center;" class="reveal">
         <a href="#" class="btn-primary">Register Now</a>
+      </div>
+      <div class="cancellation-box reveal">
+        <p class="cancellation-title">Registration Cancellation &amp; Refund Policy</p>
+        <div class="cancellation-grid">
+          <div class="cancellation-item">
+            <span class="cancellation-icon">✓</span>
+            <div>
+              <strong>On or before Friday, 8 August 2026</strong>
+              <p>Registration fees are fully refundable.</p>
+            </div>
+          </div>
+          <div class="cancellation-item">
+            <span class="cancellation-icon">✕</span>
+            <div>
+              <strong>After Friday, 8 August 2026</strong>
+              <p>Registration fees are non-refundable.</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -431,6 +539,35 @@
         <a href="https://interpore.org/chapter-united-kingdom" target="_blank" rel="noopener" class="chapter-link">
           Visit UK InterPore Chapter →
         </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- CONTACT & ACCOMMODATION -->
+  <section id="contact" style="background: var(--warm-grey);">
+    <div class="section-inner">
+      <p class="section-label reveal">Get in Touch &amp; Plan Your Visit</p>
+      <h2 class="section-title reveal">Contact &amp; Accommodation</h2>
+      <div class="contact-accomm-grid">
+
+        <div class="contact-block reveal">
+          <h3>Contact Us</h3>
+          <p>For any queries regarding abstract submission, registration, or the conference programme, please get in touch with the organising committee.</p>
+          <a href="mailto:InterporeUK2026@hw.ac.uk" class="contact-email">
+            ✉ InterporeUK2026@hw.ac.uk
+          </a>
+        </div>
+
+        <div class="accomm-block reveal" style="transition-delay:0.15s;">
+          <h3>Accommodation</h3>
+          <p>The <strong>Courtyard by Marriott Edinburgh West</strong> is located adjacent to the Heriot-Watt campus and offers convenient on-site accommodation for conference attendees.</p>
+          <p>A range of further options is available across Edinburgh, including hotels, guest houses, and B&amp;Bs in Edinburgh Park, Haymarket, and the city centre — all with good transport links to the university.</p>
+          <a href="https://www.marriott.com/en-gb/hotels/edihw-courtyard-edinburgh-west/overview/" target="_blank" rel="noopener" class="accomm-link">
+            View Courtyard by Marriott →
+          </a>
+        </div>
+
       </div>
     </div>
   </section>
